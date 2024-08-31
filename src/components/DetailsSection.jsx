@@ -1,0 +1,9 @@
+import React from 'react'
+
+const DetailsSection = ({ children }) => {
+  return (
+    <div className='flex flex-col justify-center items-center px-6 mt-40 pb-20 gap-6 rounded-lg border-border border-black border-[1px] bg-gray-400'>{children}</div>
+  )
+}
+
+export default DetailsSection;
