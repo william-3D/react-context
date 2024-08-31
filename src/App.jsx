@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import RoundedCard from './components/RoundedCard';
+import { CharacterContext } from './context';
 import { get } from './api'
 import './App.css'
 
@@ -20,11 +21,14 @@ function App() {
   }, []);
 
   return (
-    <div className='flex gap-4 justify-center items-center'>
-      {data.slice(0, 3).map((character, index) => (
-        <RoundedCard key={index} text={character.name} />
-      ))}
-    </div>
+    
+      <div className='flex gap-4 justify-center items-center'>
+        {data.slice(0, 3).map((character, index) => (
+          <CharacterContext.Provider key={index} value={character}>
+            <RoundedCard />
+          </CharacterContext.Provider>
+        ))}
+      </div>
   )
 }
 
