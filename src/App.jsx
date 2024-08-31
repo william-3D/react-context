@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import RoundedCard from './components/RoundedCard';
-import DetailsSection from './components/DetailsSection';
-import Title from './components/Title';
 import { get } from './api'
 import './App.css'
 
@@ -24,11 +22,7 @@ function App() {
   return (
     <div className='flex gap-4 justify-center items-center'>
       {data.slice(0, 3).map((character, index) => (
-        <RoundedCard>
-          <DetailsSection>
-            <Title text={character.name} />
-          </DetailsSection>
-        </RoundedCard>
+        <RoundedCard key={index} text={character.name} />
       ))}
     </div>
   )
